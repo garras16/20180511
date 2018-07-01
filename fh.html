@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>FMIPA</title>
+	<title>FH</title>
 	<style type="text/css">
 		html, body {
 			margin: 0px;
@@ -46,13 +46,16 @@
 		    <li class="nav-item">
       			<a class="nav-link" href="about.html">About</a>
     		</li>
+    		<li class="nav-item">
+      			<a class="nav-link" href="overlay.html">Unila</a>
+    		</li>
 		  </ul>
 	</nav>
 
-	<div id="map"></div>
+	<div id="map"></div><br>
 
 	<!-- Inisial backend -->
-	<script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCx0yZKvuXFS6QawkRgVvmSw_xL7eDS_4&callback=initMap"></script>
 
     <script type="text/javascript">
@@ -60,24 +63,24 @@
     	var center 	= {lat: -3.527115, lng: 119.602667};
     	var infowindow;
 		var config	= {
-			apiKey: "AIzaSyCFTo2Ptcv4rm4INPcncz-WrtIsezv2mpI",
-			authDomain: "cobagis16.firebaseapp.com",
-			databaseURL: "https://cobagis16.firebaseio.com",
-			projectId: "cobagis16",
-			storageBucket: "cobagis16.appspot.com",
-			messagingSenderId: "568661144402"
+			apiKey: "AIzaSyDxUP9qPGlgH4NscpLc2JJ0xSx8Xejh1Ig",
+			authDomain: "uasgis-abe37.firebaseapp.com",
+			databaseURL: "https://uasgis-abe37.firebaseio.com",
+			projectId: "uasgis-abe37",
+			storageBucket: "uasgis-abe37.appspot.com",
+			messagingSenderId: "888509477576"
 		};
 		firebase.initializeApp(config);
 
 	  	var db              = firebase.database();
-		var dataRef         = db.ref('fmipa');
+		var dataRef         = db.ref('fh');
 
     	dataRef.on('value', showData, showError);
     	function showData(data) {
     		console.log(data.val());
     		map.data.addGeoJson(data.val());
     		map.data.setStyle({
-    			fillColor: '#AADAFF',
+    			fillColor: '#0914a5',
     			strokeWeight: 0.2
     		});
     		map.data.addListener('click', function(event){
